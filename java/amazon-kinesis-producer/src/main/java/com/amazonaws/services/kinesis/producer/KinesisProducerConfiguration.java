@@ -289,6 +289,10 @@ public class KinesisProducerConfiguration {
     private long requestTimeout = 6000L;
     private String tempDirectory = "";
     private boolean verifyCertificate = true;
+    private String proxyHost = "";
+    private long proxyPort = 8080L;
+    private String proxyUserName = "";
+    private String proxyPassword = "";
     private ThreadingModel threadingModel = ThreadingModel.PER_REQUEST;
     private int threadPoolSize = 0;
     private String caCertPath = "";
@@ -757,6 +761,42 @@ public class KinesisProducerConfiguration {
      */
     public boolean isVerifyCertificate() {
       return verifyCertificate;
+    }
+
+    /**
+     * If you have users going through a proxy, get the host here.
+     *
+     * <p><b>Default</b>: ""
+     */
+    public String getProxyHost() {
+        return proxyHost;
+    }
+
+    /**
+     * If you have users going through a proxy, get the port here.
+     *
+     * <p><b>Default</b>: 8080
+     */
+    public long getProxyPort() {
+        return proxyPort;
+    }
+
+    /**
+     * If you have users going through a proxy, get the user name here.
+     *
+     * <p><b>Default</b>: ""
+     */
+    public String getProxyUserName() {
+        return proxyUserName;
+    }
+
+    /**
+     * If you have users going through a proxy, get the password here.
+     *
+     * <p><b>Default</b>: ""
+     */
+    public String getProxyPassword() {
+        return proxyPassword;
     }
 
     /**
